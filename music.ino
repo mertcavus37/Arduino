@@ -219,6 +219,7 @@ tempo = map (pot_deger, 0, 1023, 50, 400);
   for (int thisNote = 0; thisNote < notes * 2; thisNote = thisNote + 2) {
  pot_deger = analogRead(Pot);
 tempo = map (pot_deger, 0, 1023, 50, 400);
+ wholenote = (60000 * 4) / tempo;
     // calculates the duration of each note
     divider = pgm_read_word_near(melodyFather+thisNote + 1);
     if (divider > 0) {
@@ -276,6 +277,7 @@ tempo = map (pot_deger, 0, 1023, 50, 400);
 
  pot_deger = analogRead(Pot);
 tempo = map (pot_deger, 0, 1023, 50, 400);
+ wholenote = (60000 * 4) / tempo;
     // calculates the duration of each note
     divider = pgm_read_word_near(melodyDoom+thisNote + 1);
     if (divider > 0) {
